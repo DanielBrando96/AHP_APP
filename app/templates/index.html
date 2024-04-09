@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Metodo AHP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <main>
+        <h1>Daniel Brando Caso de Estudio Metodo AHP</h1>
+        <p>Selecione el tamaño de su matriz</p>
+        <button class="button" id="3x3">3x3</button>
+        <button class="button" id="4x4">4x4</button>
+        <button class="button" id="5x5">5x5</button>
+        <button class="button" id="6x6">6x6</button>
+        <button class="button" id="7x7">7x7</button>
+        <button class="button" id="8x8">8x8</button>
+        <button class="button2" id="calculate">Calcular</button>
+
+        <table class="table_3x3" id="table_3x3">
+          <tr>
+            <td>1</td>
+            <td><input type="number" id="3_12" name="3_12"></td>
+            <td><input type="number" id="3_13" name="3_13"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="3_21" name="3_21"></td>
+            <td>1</td>
+            <td><input type="number" id="3_23" name="3_23"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="3_31" name="3_31"></td>
+            <td><input type="number" id="3_32" name="3_32"></td>
+            <td>1</td>
+          </tr>
+        </table>
+
+        <table class="table_4x4" id="table_4x4">
+          <tr>
+            <td>1</td>
+            <td><input type="number" id="4_12" name="4_12"></td>
+            <td><input type="number" id="4_13" name="4_13"></td>
+            <td><input type="number" id="4_13" name="4_13"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="4_21" name="4_21"></td>
+            <td>1</td>
+            <td><input type="number" id="4_23" name="4_23"></td>
+            <td><input type="number" id="4_24" name="4_24"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="4_31" name="4_31"></td>
+            <td><input type="number" id="4_32" name="4_22"></td>
+            <td>1</td>
+            <td><input type="number" id="4_34" name="4_34"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="4_41" name="4_41"></td>
+            <td><input type="number" id="4_42" name="4_42"></td>
+            <td><input type="number" id="4_43" name="4_43"></td>
+            <td>1</td>
+          </tr>
+        </table>
+        <table class="table_5x5" id="table_5x5">
+          <tr>
+            <td>1</td>
+            <td><input type="number" id="5_12" name="5_12"></td>
+            <td><input type="number" id="5_13" name="5_13"></td>
+            <td><input type="number" id="5_14" name="5_14"></td>
+            <td><input type="number" id="5_15" name="5_15"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="5_21" name="5_21"></td>
+            <td>1</td>
+            <td><input type="number" id="5_23" name="5_23"></td>
+            <td><input type="number" id="5_24" name="5_24"></td>
+            <td><input type="number" id="5_25" name="5_25"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="5_31" name="5_31"></td>
+            <td><input type="number" id="5_32" name="5_32"></td>
+            <td>1</td>
+            <td><input type="number" id="5_34" name="5_34"></td>
+            <td><input type="number" id="5_35" name="5_35"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="5_41" name="5_41"></td>
+            <td><input type="number" id="5_42" name="5_42"></td>
+            <td><input type="number" id="5_43" name="5_43"></td>
+            <td>1</td>
+            <td><input type="number" id="5_45" name="5_45"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="5_12" name="5_12"></td>
+            <td><input type="number" id="5_12" name="5_12"></td>
+            <td><input type="number" id="5_12" name="5_12"></td>
+            <td><input type="number" id="5_12" name="5_12"></td>
+            <td>1</td>
+          </tr>
+        </table>
+        <table class="table_6x6" id="table_6x6">
+          <tr>
+            <td>1</td>
+            <td><input type="number" id="6_12" name="6_12"></td>
+            <td><input type="number" id="6_13" name="6_13"></td>
+            <td><input type="number" id="6_14" name="6_14"></td>
+            <td><input type="number" id="6_15" name="6_15"></td>
+            <td><input type="number" id="6_16" name="6_16"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="6_21" name="6_21"></td>
+            <td>1</td>
+            <td><input type="number" id="6_23" name="6_23"></td>
+            <td><input type="number" id="6_24" name="6_24"></td>
+            <td><input type="number" id="6_25" name="6_25"></td>
+            <td><input type="number" id="6_26" name="6_26"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="6_31" name="6_32"></td>
+            <td><input type="number" id="6_32" name="6_32"></td>
+            <td>1</td>
+            <td><input type="number" id="6_34" name="6_34"></td>
+            <td><input type="number" id="6_35" name="6_35"></td>
+            <td><input type="number" id="6_36" name="6_36"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="6_41" name="6_41"></td>
+            <td><input type="number" id="6_42" name="6_42"></td>
+            <td><input type="number" id="6_43" name="6_43"></td>
+            <td>1</td>
+            <td><input type="number" id="6_45" name="6_45"></td>
+            <td><input type="number" id="6_46" name="6_46"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="6_51" name="6_51"></td>
+            <td><input type="number" id="6_52" name="6_52"></td>
+            <td><input type="number" id="6_53" name="6_53"></td>
+            <td><input type="number" id="6_54" name="6_54"></td>
+            <td>1</td>
+            <td><input type="number" id="6_56" name="6_56"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="6_61" name="6_61"></td>
+            <td><input type="number" id="6_62" name="6_62"></td>
+            <td><input type="number" id="6_63" name="6_63"></td>
+            <td><input type="number" id="6_64" name="6_64"></td>
+            <td><input type="number" id="6_65" name="6_65"></td>
+            <td>1</td>
+          </tr>
+        </table>
+        <table class="table_7x7" id="table_7x7">
+          <tr>
+            <td>1</td>
+            <td><input type="number" id="7_12" name="7_12"></td>
+            <td><input type="number" id="7_13" name="7_13"></td>
+            <td><input type="number" id="7_14" name="7_14"></td>
+            <td><input type="number" id="7_15" name="7_15"></td>
+            <td><input type="number" id="7_16" name="7_16"></td>
+            <td><input type="number" id="7_17" name="7_17"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="7_21" name="7_21"></td>
+            <td>1</td>
+            <td><input type="number" id="7_23" name="7_23"></td>
+            <td><input type="number" id="7_24" name="7_24"></td>
+            <td><input type="number" id="7_25" name="7_25"></td>
+            <td><input type="number" id="7_26" name="7_26"></td>
+            <td><input type="number" id="7_27" name="7_27"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="7_31" name="7_31"></td>
+            <td><input type="number" id="7_32" name="7_32"></td>
+            <td>1</td>
+            <td><input type="number" id="7_34" name="7_34"></td>
+            <td><input type="number" id="7_35" name="7_35"></td>
+            <td><input type="number" id="7_36" name="7_36"></td>
+            <td><input type="number" id="7_37" name="7_37"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="7_41" name="7_41"></td>
+            <td><input type="number" id="7_42" name="7_42"></td>
+            <td><input type="number" id="7_43" name="7_43"></td>
+            <td>1</td>
+            <td><input type="number" id="7_45" name="7_45"></td>
+            <td><input type="number" id="7_46" name="7_46"></td>
+            <td><input type="number" id="7_47" name="7_47"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="7_51" name="7_51"></td>
+            <td><input type="number" id="7_52" name="7_52"></td>
+            <td><input type="number" id="7_53" name="7_53"></td>
+            <td><input type="number" id="7_54" name="7_54"></td>
+            <td>1</td>
+            <td><input type="number" id="7_65" name="7_65"></td>
+            <td><input type="number" id="7_57" name="7_57"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="7_61" name="7_61"></td>
+            <td><input type="number" id="7_62" name="7_62"></td>
+            <td><input type="number" id="7_63" name="7_63"></td>
+            <td><input type="number" id="7_64" name="7_64"></td>
+            <td><input type="number" id="7_65" name="7_65"></td>
+            <td>1</td>
+            <td><input type="number" id="7_67" name="7_67"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="7_71" name="7_71"></td>
+            <td><input type="number" id="7_72" name="7_72"></td>
+            <td><input type="number" id="7_73" name="7_73"></td>
+            <td><input type="number" id="7_74" name="7_74"></td>
+            <td><input type="number" id="7_75" name="7_75"></td>
+            <td><input type="number" id="7_76" name="7_76"></td>
+            <td>1</td>
+          </tr>
+        </table>
+        <table class="table_8x8" id="table_8x8">
+          <tr>
+            <td>1</td>
+            <td><input type="number" id="8_12" name="8_12"></td>
+            <td><input type="number" id="8_13" name="8_13"></td>
+            <td><input type="number" id="8_14" name="8_14"></td>
+            <td><input type="number" id="8_15" name="8_15"></td>
+            <td><input type="number" id="8_16" name="8_16"></td>
+            <td><input type="number" id="8_17" name="8_17"></td>
+            <td><input type="number" id="8_18" name="8_18"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="8_21" name="8_21"></td>
+            <td>1</td>
+            <td><input type="number" id="8_23" name="8_23"></td>
+            <td><input type="number" id="8_24" name="8_24"></td>
+            <td><input type="number" id="8_25" name="8_25"></td>
+            <td><input type="number" id="8_26" name="8_26"></td>
+            <td><input type="number" id="8_27" name="8_27"></td>
+            <td><input type="number" id="8_28" name="8_28"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="8_31" name="8_31"></td>
+            <td><input type="number" id="8_32" name="8_32"></td>
+            <td>1</td>
+            <td><input type="number" id="8_34" name="8_34"></td>
+            <td><input type="number" id="8_35" name="8_35"></td>
+            <td><input type="number" id="8_36" name="8_36"></td>
+            <td><input type="number" id="8_37" name="8_37"></td>
+            <td><input type="number" id="8_38" name="8_38"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="8_41" name="8_41"></td>
+            <td><input type="number" id="8_42" name="8_42"></td>
+            <td><input type="number" id="8_43" name="8_43"></td>
+            <td>1</td>
+            <td><input type="number" id="8_45" name="8_45"></td>
+            <td><input type="number" id="8_46" name="8_46"></td>
+            <td><input type="number" id="8_47" name="8_47"></td>
+            <td><input type="number" id="8_48" name="8_48"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="8_51" name="8_51"></td>
+            <td><input type="number" id="8_52" name="8_52"></td>
+            <td><input type="number" id="8_53" name="8_53"></td>
+            <td><input type="number" id="8_54" name="8_54"></td>
+            <td>1</td>
+            <td><input type="number" id="8_56" name="8_56"></td>
+            <td><input type="number" id="8_57" name="8_57"></td>
+            <td><input type="number" id="8_58" name="8_58"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="8_61" name="8_61"></td>
+            <td><input type="number" id="8_62" name="8_62"></td>
+            <td><input type="number" id="8_63" name="8_63"></td>
+            <td><input type="number" id="8_64" name="8_64"></td>
+            <td><input type="number" id="8_65" name="8_65"></td>
+            <td>1</td>
+            <td><input type="number" id="8_67" name="8_67"></td>
+            <td><input type="number" id="8_68" name="8_68"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="8_71" name="8_71"></td>
+            <td><input type="number" id="8_72" name="8_72"></td>
+            <td><input type="number" id="8_73" name="8_73"></td>
+            <td><input type="number" id="8_74" name="8_74"></td>
+            <td><input type="number" id="8_75" name="8_75"></td>
+            <td><input type="number" id="8_76" name="8_76"></td>
+            <td>1</td>
+            <td><input type="number" id="8_78" name="8_78"></td>
+          </tr>
+          <tr>
+            <td><input type="number" id="8_81" name="8_81"></td>
+            <td><input type="number" id="8_82" name="8_82"></td>
+            <td><input type="number" id="8_83" name="8_83"></td>
+            <td><input type="number" id="8_84" name="8_84"></td>
+            <td><input type="number" id="8_85" name="8_85"></td>
+            <td><input type="number" id="8_86" name="8_86"></td>
+            <td><input type="number" id="8_87" name="8_87"></td>
+            <td>1</td>
+          </tr>
+        </table>
+
+    </main>
+    <script src="{{ url_for('static', filename='js/js.js') }}"></script>
+  </body>
+</html>
